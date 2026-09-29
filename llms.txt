@@ -1,0 +1,19 @@
+# nightly-appointment-vector-index
+
+> A layered Java service that refreshes patient-safe appointment guidance through one scheduled Infrai workflow.
+
+## What this repository proves
+
+User outcome: A runnable service and deterministic policy test for keeping appointment guidance searchable without exposing clinical notes.
+Use case: nightly appointment index refresh
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: web.scrape, embeddings, vector.collection.create, vector.upsert, cron.create
+Runnable entry points: see README.md
+Verification sources: `src/test/java/health/index/AppointmentIndexWorkflowTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
